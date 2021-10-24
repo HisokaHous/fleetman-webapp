@@ -2,12 +2,11 @@ pipeline {
    agent any
 
    environment { 
-        registry = "hisoka1/mine" 
-        registryCredential = 'YOUR_DOCKERHUB_USERNAME' 
-        dockerImage = '' 
-    }
-     
+     registry = "hisoka1/mine" 
+     registryCredential = 'YOUR_DOCKERHUB_USERNAME' 
+     dockerImage = '' 
      SERVICE_NAME = "fleetman-webapp"
+     BUILD_ID = "1"
      REPOSITORY_TAG="${YOUR_DOCKERHUB_USERNAME}/${ORGANIZATION_NAME}-${SERVICE_NAME}:${BUILD_ID}"
    }
 
