@@ -29,8 +29,9 @@ pipeline {
 
       stage('Build and Push Image again') {
          steps {
-                script { 
-                    dockerImage = docker.build registry + ":${REPOSITORY_TAG}" 
+         container('docker') {
+                      sh 'docker image build -t ${REPOSITORY_TAG} .'   
+           //         dockerImage = docker.build registry + ":${REPOSITORY_TAG}" 
                 }
             } 
       }
