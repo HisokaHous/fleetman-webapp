@@ -3,8 +3,7 @@ pipeline {
 
    environment { 
      registry = "hisoka1/mine" 
-     registryCredential = 'YOUR_DOCKERHUB_USERNAME' 
-     dockerImage = '' 
+     registryCredential = 'YOUR_DOCKERHUB_USERNAME'  
      SERVICE_NAME = "fleetman-webapp"
      BUILD_ID = "1"
      REPOSITORY_TAG="${YOUR_DOCKERHUB_USERNAME}/${ORGANIZATION_NAME}-${SERVICE_NAME}:${BUILD_ID}"
@@ -24,9 +23,6 @@ pipeline {
       }
 
       stage('Build and Push Image') {
-        // steps {
-          // sh 'docker image build -t ${REPOSITORY_TAG} .'
-         //}
          steps {
                 script { 
                     dockerImage = docker.build registry + ":${REPOSITORY_TAG}" 
