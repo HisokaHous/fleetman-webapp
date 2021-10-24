@@ -22,7 +22,7 @@ pipeline {
          }
       }
 
-      stage('Build and Push Image') {
+      stage('Build and Push Image again') {
          steps {
                 script { 
                     dockerImage = docker.build registry + ":${REPOSITORY_TAG}" 
